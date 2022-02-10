@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6624148484585589827}
   - component: {fileID: 6624148484585589826}
   - component: {fileID: 7884167802330275993}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Platform-jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.012752414, y: -0.1657809}
   m_SpriteTilingProperty:
