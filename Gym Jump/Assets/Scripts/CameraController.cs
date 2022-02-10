@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform target;
+    public float moveSmoothnes = .3f;
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        if (target.position.y - 2 > transform.position.y)
+        {
+            Vector3 newPos = new Vector3(transform.position.x, target.position.y - 2, transform.position.z);
+            transform.position = newPos;
+        }
     }
 }
