@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform target;
-    public float moveSmoothnes = .3f;
 
     void LateUpdate()
     {
