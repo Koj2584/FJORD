@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public bool isGrounded = false;
 
     Rigidbody2D rg;
+    public Animator anim;
     public Transform groundChack;
     public float checkRadius;
     public LayerMask whatIsGround;
@@ -25,6 +26,21 @@ public class Player : MonoBehaviour
         movementX = Input.GetAxis("Horizontal")*movementSpeed;
         if (isGrounded && Input.GetKey(KeyCode.Space))
             rg.velocity = Vector2.up * jumpHigh;
+        if (movementX > 0)
+        {
+            transform.rotation = new Quaternion(transform.rotation.x, 180, transform.rotation.z,transform.rotation.w);
+            anim.SetBool("Chuze", true);
+        }
+        if(movementX<0)
+        {
+            transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, transform.rotation.w);
+            anim.SetBool("Chuze", true);
+        }
+        if (movementX == 0)
+        {
+            anim.SetBool("Chuze", false);
+            
+        }
     }
 
     private void FixedUpdate()
