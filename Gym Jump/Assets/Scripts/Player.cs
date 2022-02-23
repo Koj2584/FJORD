@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public bool isGrounded = false;
 
     Rigidbody2D rg;
+    public Transform border;
     public Animator anim;
     public Transform groundChack;
     public float checkRadius;
@@ -40,6 +41,14 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("Chuze", false);
             
+        }
+        if (transform.position.x >= border.position.x)
+        {
+            transform.position = new Vector2(-(transform.position.x-0.2f), transform.position.y);
+        }
+        if (transform.position.x <= -border.position.x)
+        {
+            transform.position = new Vector2(-(transform.position.x+0.2f), transform.position.y);
         }
     }
 
