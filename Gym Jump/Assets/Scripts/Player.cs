@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         movementX = Input.GetAxis("Horizontal")*movementSpeed;
-        if (isGrounded && Input.GetKey(KeyCode.Space))
+        if (isGrounded && Input.GetKey(KeyCode.Space) && rg.velocity.y <=0.1)
             rg.velocity = Vector2.up * jumpHigh;
         if (movementX > 0)
         {
