@@ -11,8 +11,8 @@ public class MapCreator : MonoBehaviour
     //public GameObject konec;
     public int Height = 150;
     public float levelWidth = 5f;
-    public float minY = .5f;
-    public float maxY = 3.5f;
+    public float minY = 1;
+    public float maxY = 2f;
 
     void Start()
     {
@@ -28,15 +28,13 @@ public class MapCreator : MonoBehaviour
             spawnPos.x = Random.Range(-levelWidth, levelWidth);
             Instantiate(platforPrefab[platform], spawnPos, Quaternion.identity, gameObject.transform);
         }
-        int platform1 = Random.Range(1, 20);
-        if (platform1 != 1)
-            platform1 = 0;
         spawnPos.y += Random.Range(minY, maxY);
         spawnPos.x = Random.Range(-levelWidth, levelWidth);
+        Instantiate(platforPrefab[2], spawnPos, Quaternion.identity, gameObject.transform);
     }
 
     private void FixedUpdate()
     {
-        background.transform.position = new Vector2(background.transform.position.x, camera.transform.position.y - delka.position.y / (Height + 4) * camera.transform.position.y);
+        background.transform.position = new Vector2(background.transform.position.x, camera.transform.position.y - delka.position.y / (Height + 6.5f) * camera.transform.position.y);
     }
 }
