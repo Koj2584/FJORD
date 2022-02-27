@@ -24,4 +24,22 @@ public class buttons : MonoBehaviour
 
         }
     }
+
+    public void HlMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit();
+    }
 }

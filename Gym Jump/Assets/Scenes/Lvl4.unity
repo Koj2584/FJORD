@@ -1609,7 +1609,7 @@ MonoBehaviour:
   background: {fileID: 1930388530}
   camera: {fileID: 519420028}
   delka: {fileID: 740784000}
-  Height: 400
+  Height: 300
   levelWidth: 5
   minY: 1.5
   maxY: 3
