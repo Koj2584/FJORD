@@ -26,7 +26,7 @@ public class MapCreator : MonoBehaviour
                 platform = 0;
             spawnPos.y += Random.Range(minY, maxY);
             spawnPos.x = Random.Range(-levelWidth, levelWidth);
-            Instantiate(platforPrefab[platform], spawnPos, Quaternion.identity);
+            Instantiate(platforPrefab[platform], spawnPos, Quaternion.identity, gameObject.transform);
         }
         int platform1 = Random.Range(1, 20);
         if (platform1 != 1)
@@ -37,6 +37,6 @@ public class MapCreator : MonoBehaviour
 
     private void FixedUpdate()
     {
-        background.transform.position = new Vector2(background.transform.position.x, camera.transform.position.y - delka.position.y/(Height+3)*camera.transform.position.y);
+        background.transform.position = new Vector2(background.transform.position.x, camera.transform.position.y - delka.position.y/(Height+4)*camera.transform.position.y);
     }
 }

@@ -12,7 +12,7 @@ public class Death : MonoBehaviour
 
     void Update()
     {
-        if(player.transform.position.y <= gameObject.transform.position.y && jednou)
+        if ((player.transform.position.y <= gameObject.transform.position.y && jednou) || Input.GetKeyDown(KeyCode.R)) 
         {
             jednou = false;
 
