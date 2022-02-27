@@ -25,8 +25,18 @@ public class Player : MonoBehaviour
     void Update()
     {
         movementX = Input.GetAxis("Horizontal")*movementSpeed;
-        if (isGrounded && Input.GetKey(KeyCode.Space) && rg.velocity.y <=0.1)
+        if (isGrounded && Input.GetKey(KeyCode.Space) && rg.velocity.y <= 0.1)
+        {
             rg.velocity = Vector2.up * jumpHigh;
+        }
+        if(rg.velocity.y >=0.1)
+            anim.SetBool("Skok", true);
+        if (rg.velocity.y < 0)
+            anim.SetBool("Skok", false);
+        if(isGrounded)
+            anim.SetBool("Ground", true);
+        else
+            anim.SetBool("Ground", false);
         if (movementX > 0)
         {
             transform.rotation = new Quaternion(transform.rotation.x, 180, transform.rotation.z,transform.rotation.w);
