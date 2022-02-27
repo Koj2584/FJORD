@@ -17,7 +17,7 @@ public class MapCreator : MonoBehaviour
     void Start()
     {
         Vector3 spawnPos = new Vector3();
-        spawnPos.y -= 3.5f;
+        spawnPos.y -= maxY+3;
 
         for (int i = 0; spawnPos.y < Height; i++)
         {
