@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Destroier : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GameObject destroier;
+
+    private void Start()
     {
-        
+        destroier = GameObject.FindGameObjectWithTag("Destroier");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(destroier.transform.position.y >= gameObject.transform.position.y)
+        {
+            Destroy(gameObject);
+        }
     }
 }
