@@ -37,6 +37,6 @@ public class MapCreator : MonoBehaviour
 
     private void FixedUpdate()
     {
-        background.transform.position = new Vector2(background.transform.position.x, camera.transform.position.y - delka.position.y/(Height+4)*camera.transform.position.y);
+        background.transform.position = new Vector2(background.transform.position.x, camera.transform.position.y - delka.position.y / (Height + 4) * camera.transform.position.y);
     }
 }
