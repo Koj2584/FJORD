@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Platform
   - Destroier
+  - WinUI
+  - Canvas
   layers:
   - Default
   - TransparentFX
