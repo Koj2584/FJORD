@@ -9,8 +9,7 @@ public class MapCreator : MonoBehaviour
     public GameObject camera;
     public Transform delka;
     //public GameObject konec;
-    float vyskaMapy = 0;
-    public int numberOfPlatforms = 150;
+    public int Height = 150;
     public float levelWidth = 5f;
     public float minY = .5f;
     public float maxY = 3.5f;
@@ -20,7 +19,7 @@ public class MapCreator : MonoBehaviour
         Vector3 spawnPos = new Vector3();
         spawnPos.y -= 3.5f;
 
-        for (int i = 0; i < numberOfPlatforms; i++)
+        for (int i = 0; spawnPos.y < Height; i++)
         {
             int platform = Random.Range(1, 20);
             if (platform != 1)
@@ -29,7 +28,6 @@ public class MapCreator : MonoBehaviour
             spawnPos.x = Random.Range(-levelWidth, levelWidth);
             Instantiate(platforPrefab[platform], spawnPos, Quaternion.identity);
         }
-        vyskaMapy = spawnPos.y;
         int platform1 = Random.Range(1, 20);
         if (platform1 != 1)
             platform1 = 0;
@@ -39,6 +37,6 @@ public class MapCreator : MonoBehaviour
 
     private void FixedUpdate()
     {
-        background.transform.position = new Vector2(background.transform.position.x, camera.transform.position.y - delka.position.y/vyskaMapy*camera.transform.position.y);
+        background.transform.position = new Vector2(background.transform.position.x, camera.transform.position.y - delka.position.y/(Height+3)*camera.transform.position.y);
     }
 }
