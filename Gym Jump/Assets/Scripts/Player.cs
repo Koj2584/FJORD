@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
+    public short itemCounter = 0;
+
     void Start()
     {
         rg = gameObject.GetComponent<Rigidbody2D>();

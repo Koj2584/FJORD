@@ -1201,7 +1201,7 @@ GameObject:
   - component: {fileID: 1136457756}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1240,8 +1240,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0004986027, y: -0.2571807}
-  m_Size: {x: 0.0840669, y: 0.14310068}
+  m_Offset: {x: -0.0004986027, y: -0.23475242}
+  m_Size: {x: 0.0840669, y: 0.18795663}
   m_Direction: 0
 --- !u!212 &1136457753
 SpriteRenderer:
@@ -1333,6 +1333,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  itemCounter: 0
 --- !u!95 &1136457756
 Animator:
   serializedVersion: 4
@@ -1500,6 +1501,8 @@ MonoBehaviour:
   background: {fileID: 1930388530}
   camera: {fileID: 519420028}
   delka: {fileID: 740784000}
+  items:
+  - {fileID: 1633771724054735035, guid: 7b1597eefff2f80439a61cd6cc4c3527, type: 3}
   Height: 150
   levelWidth: 4
   minY: 1

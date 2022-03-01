@@ -8,6 +8,7 @@ public class MapCreator : MonoBehaviour
     public GameObject background;
     public GameObject camera;
     public Transform delka;
+    public GameObject[] items;
     //public GameObject konec;
     public int Height = 150;
     public float levelWidth = 5f;
@@ -27,6 +28,11 @@ public class MapCreator : MonoBehaviour
             spawnPos.y += Random.Range(minY, maxY);
             spawnPos.x = Random.Range(-levelWidth, levelWidth);
             Instantiate(platforPrefab[platform], spawnPos, Quaternion.identity, gameObject.transform);
+            if (platform == 0 && (int)Random.Range(1, 10) == 9)
+            {
+                spawnPos.y += 1.1f;
+                Instantiate(items[0], spawnPos, Quaternion.identity);
+            }
         }
         spawnPos.y += Random.Range(minY, maxY);
         spawnPos.x = Random.Range(-levelWidth, levelWidth);
