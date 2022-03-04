@@ -8,13 +8,13 @@ public class Player : MonoBehaviour
     public float jumpHigh = 11f;
     float movementX = 0f;
     public bool isGrounded = false;
-
     Rigidbody2D rg;
     public Transform border;
     public Animator anim;
     public Transform groundChack;
     public float checkRadius;
     public LayerMask whatIsGround;
+    public itemUI text;
 
     public short itemCounter = 0;
     short itemCounterP = 0;
@@ -45,20 +45,23 @@ public class Player : MonoBehaviour
         if (itemCounter > itemCounterP && timer == -1)
         {
             itemCounterP = itemCounter;
-            movementSpeed += 3;
-            jumpHigh += 2;
-            timer = 3000;
+            movementSpeed += 4;
+            jumpHigh += 3;
+            timer = 1500;
+            text.SetItem("Bílá koule");
         }
         if (timer == 0)
         {
-            movementSpeed -= 3;
-            jumpHigh -= 2;
+            movementSpeed -= 4;
+            jumpHigh -= 3;
+            text.DelItem();
             timer--;
         }
         else if (timer != -1)
         {
             timer--;
         }
+        itemCounterP = itemCounter;
     }
 
     void Movment()
