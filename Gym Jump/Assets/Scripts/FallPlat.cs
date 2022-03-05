@@ -17,7 +17,7 @@ public class FallPlat : MonoBehaviour
     {
         if (col.relativeVelocity.y < 0)
         {
-            Invoke("DropPlatform", 0.5f);
+            Invoke("DropPlatform", 0.25f);
             Destroy(gameObject, 2f);
 
         }

@@ -16,8 +16,8 @@ public class Player : MonoBehaviour
     public LayerMask whatIsGround;
     public itemUI text;
 
-    public short itemCounter = 0;
-    short itemCounterP = 0;
+    public bool isActive = false;
+    bool endActive = true;
 
     public int timer = -1;
 
@@ -42,26 +42,24 @@ public class Player : MonoBehaviour
 
     void Itemy()
     {
-        if (itemCounter > itemCounterP && timer == -1)
+        if (isActive && endActive)
         {
-            itemCounterP = itemCounter;
+            isActive = false;
+            endActive = false;
             movementSpeed += 4;
             jumpHigh += 3;
-            timer = 1500;
             text.SetItem("Bílá koule");
+            Invoke("EndItem", 2.5f);
         }
-        if (timer == 0)
-        {
-            movementSpeed -= 4;
-            jumpHigh -= 3;
-            text.DelItem();
-            timer--;
-        }
-        else if (timer != -1)
-        {
-            timer--;
-        }
-        itemCounterP = itemCounter;
+        isActive = false;
+    }
+
+    void EndItem()
+    {
+        movementSpeed -= 4;
+        jumpHigh -= 3;
+        text.DelItem();
+        endActive = true;
     }
 
     void Movment()

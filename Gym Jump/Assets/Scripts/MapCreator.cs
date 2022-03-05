@@ -30,7 +30,7 @@ public class MapCreator : MonoBehaviour
             spawnPos.y += Random.Range(minY, maxY);
             spawnPos.x = Random.Range(-levelWidth, levelWidth);
             Instantiate(platforPrefab[platform], spawnPos, Quaternion.identity, gameObject.transform);
-            if (platform == 0 && (int)Random.Range(1, 10) == 9)
+            if (platform != 1 && (int)Random.Range(1, 10) == 9)
             {
                 spawnPos.y += 1.1f;
                 Instantiate(items[0], spawnPos, Quaternion.identity);

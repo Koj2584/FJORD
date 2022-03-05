@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            player.itemCounter++;
+            player.isActive = true;
         }
 
         if (collision.gameObject.layer == LayerMask.GetMask("Ground"));
