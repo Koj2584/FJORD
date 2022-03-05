@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     void Movment()
     {
         movementX = Input.GetAxis("Horizontal") * movementSpeed;
-        if (isGrounded && Input.GetKey(KeyCode.Space) && rg.velocity.y <= 0.1)
+        if (isGrounded && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && rg.velocity.y <= 0.1)
         {
             rg.velocity = Vector2.up * jumpHigh;
         }
