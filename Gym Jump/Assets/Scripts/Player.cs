@@ -19,8 +19,6 @@ public class Player : MonoBehaviour
     public bool isActive = false;
     bool endActive = true;
 
-    public int timer = -1;
-
     void Start()
     {
         rg = gameObject.GetComponent<Rigidbody2D>();
