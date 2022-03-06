@@ -14,6 +14,7 @@ public class WinPlatform : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 Instantiate(win,GameObject.FindGameObjectWithTag("Canvas").transform);
+                Cursor.visible = true;
             }
         }
     }
