@@ -16,9 +16,6 @@ public class Player : MonoBehaviour
     public LayerMask whatIsGround;
     public itemUI text;
 
-    public bool isActive = false;
-    bool endActive = true;
-
     void Start()
     {
         rg = gameObject.GetComponent<Rigidbody2D>();
@@ -28,8 +25,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movment();
-
-        Itemy();
     }
 
     private void FixedUpdate()
@@ -37,29 +32,7 @@ public class Player : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundChack.position, checkRadius, whatIsGround);
         rg.velocity = new Vector2(movementX, rg.velocity.y);
     }
-
-    void Itemy()
-    {
-        if (isActive && endActive)
-        {
-            isActive = false;
-            endActive = false;
-            movementSpeed += 4;
-            jumpHigh += 3;
-            text.SetItem("Bílá koule");
-            Invoke("EndItem", 2.5f);
-        }
-        isActive = false;
-    }
-
-    void EndItem()
-    {
-        movementSpeed -= 4;
-        jumpHigh -= 3;
-        text.DelItem();
-        endActive = true;
-    }
-
+    
     void Movment()
     {
         movementX = Input.GetAxis("Horizontal") * movementSpeed;
@@ -99,4 +72,21 @@ public class Player : MonoBehaviour
             transform.position = new Vector2(-(transform.position.x + 0.2f), transform.position.y);
         }
     }
+    
+    
+    public void Itemy()
+    {
+        movementSpeed += 4;
+        jumpHigh += 3;
+        text.SetItem("Bílá koule");
+        Invoke("EndItem", 2.5f);
+    }
+
+    void EndItem()
+    {
+        movementSpeed -= 4;
+        jumpHigh -= 3;
+        text.DelItem();
+    }
+
 }

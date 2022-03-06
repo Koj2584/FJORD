@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    Player player;
+    ItemCounter itemCounter;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        itemCounter = ItemCounter.FindObjectOfType<ItemCounter>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            player.isActive = true;
+            itemCounter.itemCounter++;
         }
 
         if (collision.gameObject.layer == LayerMask.GetMask("Ground"));
