@@ -12,6 +12,7 @@ public class MusicPlayer : MonoBehaviour
     {
         audioSource = FindObjectOfType<AudioSource>();
         audioSource.loop = false;
+        audioSource.volume = 0.2f;
         random = Random.Range(0, clips.Length);
     }
 
