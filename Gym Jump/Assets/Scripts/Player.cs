@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
     {
         movementSpeed += 4;
         jumpHigh += 3;
-        text.SetItem("Bílá koule");
+        text.SetItem("Steroidy");
         Invoke("EndItem", 2.5f);
     }
 

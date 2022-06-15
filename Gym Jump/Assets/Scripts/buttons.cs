@@ -17,7 +17,8 @@ public class buttons : MonoBehaviour
     {
         try
         {
-            SceneManager.LoadScene(int.Parse(gameObject.name));
+            SceneMan.scene = int.Parse(gameObject.name);
+            SceneManager.LoadScene(1);
         }
         catch
         {
