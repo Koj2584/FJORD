@@ -6,69 +6,58 @@ public class MapCreator : MonoBehaviour
 {
     public GameObject[] platforPrefab;
     public GameObject background;
-    public GameObject camera;
+    public new GameObject camera;
     public Transform delka;
     public GameObject[] items;
-    //public GameObject konec;
     public int Height;
     public float levelWidth;
     public float minY;
     public float maxY;
-    int level;
 
     void StartSetup()
     {
         levelWidth = 5f;
-        switch(level)
+        minY = 1;
+        switch (SceneMan.scene)
         {
             case 1: 
                 Height = 150;
-                minY = 1;
                 maxY = 2f;
                 break;
             case 2:
                 Height = 250;
-                minY = 1;
                 maxY = 2f;
                 break;
             case 3:
                 Height = 400;
-                minY = 1;
                 maxY = 2.5f;
                 break;
             case 4:
                 Height = 550;
-                minY = 1;
                 maxY = 2.5f;
                 break;
             case 5:
                 Height = 750;
-                minY = 1;
                 maxY = 2.5f;
                 break;
             case 6:
                 Height = 950;
-                minY = 1;
                 maxY = 3f;
                 break;
             case 7:
                 Height = 1200;
-                minY = 1;
                 maxY = 3f;
                 break;
             case 8:
                 Height = 1450;
-                minY = 1;
                 maxY = 3f;
                 break;
             case 9:
                 Height = 1750;
-                minY = 1;
                 maxY = 3f;
                 break;
             case 10:
                 Height = 2150;
-                minY = 1;
                 maxY = 3f;
                 break;
         }
@@ -76,10 +65,10 @@ public class MapCreator : MonoBehaviour
 
     void Start()
     {
-        level = SceneMan.scene;
         StartSetup();
-        Vector3 spawnPos = new Vector3();
-        spawnPos.y -= maxY+3;
+        Vector3 spawnPos = new(0,-(maxY + 3),0);
+
+        Debug.Log(gameObject.transform.position);
 
         for (int i = 0; spawnPos.y < Height; i++)
         {
