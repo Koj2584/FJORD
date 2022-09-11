@@ -38,6 +38,21 @@ public class buttons : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void NextLvl()
+    {
+        try
+        {
+            SceneMan.scene++;
+            Debug.Log(SceneMan.scene);
+            Time.timeScale = 1;
+            SceneManager.LoadScene(1);
+        }
+        catch
+        {
+
+        }
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quitting game...");

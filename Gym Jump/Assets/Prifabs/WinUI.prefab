@@ -327,7 +327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 156}
+  m_AnchoredPosition: {x: 0, y: -141}
   m_SizeDelta: {x: 1400, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4500908205850676405
@@ -505,7 +505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -141}
+  m_AnchoredPosition: {x: 0, y: 156}
   m_SizeDelta: {x: 1400, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8362683584550144512
@@ -592,7 +592,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3416456037952312592}
         m_TargetAssemblyTypeName: buttons, Assembly-CSharp
-        m_MethodName: ResetGame
+        m_MethodName: NextLvl
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1128,4 +1128,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play again
+  m_Text: Next level
