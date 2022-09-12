@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class OpenLevel : MonoBehaviour
 {
-    static public int activeLevel;
+    static public int activeLevel = 0;
 }
