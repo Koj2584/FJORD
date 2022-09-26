@@ -1,3 +1,4 @@
 # FJORD
 
-Školní projekt
+Krátká plošinová hra. Školní projekt.
+
