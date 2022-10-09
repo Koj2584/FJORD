@@ -1,10 +1,12 @@
 using System.Collections;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
     public AudioClip[] clips;
     private AudioSource audioSource;
+    public AudioMixerGroup Output;
 
     int random = 0;
 
@@ -13,6 +15,9 @@ public class MusicPlayer : MonoBehaviour
         audioSource = FindObjectOfType<AudioSource>();
         audioSource.loop = false;
         audioSource.volume = 0.2f;
+        audioSource.outputAudioMixerGroup =Output;
+        //if()
+
         random = Random.Range(0, clips.Length);
     }
 
