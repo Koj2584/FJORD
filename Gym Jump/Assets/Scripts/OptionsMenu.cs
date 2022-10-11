@@ -55,4 +55,8 @@ public class OptionsMenu : MonoBehaviour
     {
         Screen.fullScreen = fullScreen;
     }
+    public void PravejOndra(bool ondra)
+    {
+        Optons.spravnejOndra = ondra;
+    }
 }
