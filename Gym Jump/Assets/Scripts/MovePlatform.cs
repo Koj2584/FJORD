@@ -9,6 +9,7 @@ public class MovePlatform : MonoBehaviour
     public Transform pos1, pos2;
     public float speed;
     public Transform startPos;
+    Transform player;
 
     Vector3 nextPos;
 
@@ -18,6 +19,7 @@ public class MovePlatform : MonoBehaviour
     void Start()
     {
         nextPos = startPos.position;
+        player = GetComponent<Transform>().Find("Player");
     }
 
     // Update is called once per frame
@@ -37,5 +39,16 @@ public class MovePlatform : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        player.parent = this.transform;
+        Debug.Log("asdasd");
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        player.parent = null;
     }
 }
