@@ -8,23 +8,6 @@ public class MenuManager : MonoBehaviour
     public GameObject levels;
     public GameObject options;
 
-    public static int Switch = 0;
-
-    private void Update()
-    {
-        switch(Switch)
-        {
-            case 1:
-                Play();
-                Switch = 0;
-                break;
-            case 2:
-                Options();
-                Switch = 0;
-                break;
-        }
-    }
-
     public void Play()
     {
         hlMenu.SetActive(false);

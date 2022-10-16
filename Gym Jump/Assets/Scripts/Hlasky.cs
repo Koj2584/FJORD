@@ -16,7 +16,7 @@ public class Hlasky : MonoBehaviour
     void Start()
     {
         audioSource.loop = false;
-        audioSource.volume = 0.2f;
+        audioSource.volume = 1f;
         audioSource.outputAudioMixerGroup = Output;
         cas = Random.Range(10, max);
     }

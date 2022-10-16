@@ -72,15 +72,20 @@ public class MapCreator : MonoBehaviour
 
         for (int i = 0; spawnPos.y < Height; i++)
         {
+            spawnPos.y += Random.Range(minY, maxY);
+            spawnPos.x = Random.Range(-levelWidth, levelWidth);
             int platform = Random.Range(1, 20);
             if (platform == 2 || platform == 3)
                 platform = 2;
+            else if (platform == 4 || platform == 5)
+            {
+                platform = 4;
+                spawnPos.x = 0;
+            }
             else if (platform != 1)
                 platform = 0;
-            spawnPos.y += Random.Range(minY, maxY);
-            spawnPos.x = Random.Range(-levelWidth, levelWidth);
             Instantiate(platforPrefab[platform], spawnPos, Quaternion.identity, gameObject.transform);
-            if (platform != 1 && (int)Random.Range(1, 25) == 1)
+            if ((platform != 1 && platform != 4)&& (int)Random.Range(1, 25) == 1)
             {
                 spawnPos.y += 1.1f;
                 Instantiate(items[0], spawnPos, Quaternion.identity);

@@ -19,7 +19,9 @@ public class MovePlatform : MonoBehaviour
     void Start()
     {
         nextPos = startPos.position;
-        player = GetComponent<Transform>().Find("Player");
+        player = GameObject.FindWithTag("Player").transform;
+        this.transform.position = new Vector3(Random.Range(-6.5f, 6.5f), this.transform.position.y, this.transform.position.z);
+        speed = Random.Range(1f, 4f);
     }
 
     // Update is called once per frame
@@ -44,7 +46,6 @@ public class MovePlatform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         player.parent = this.transform;
-        Debug.Log("asdasd");
     }
 
     private void OnCollisionExit2D(Collision2D collision)

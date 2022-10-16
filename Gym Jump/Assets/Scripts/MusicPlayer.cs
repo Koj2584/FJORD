@@ -11,6 +11,7 @@ public class MusicPlayer : MonoBehaviour
 
     int random1 = 0;
     int random2 = 0;
+    bool p;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class MusicPlayer : MonoBehaviour
 
         random1 = Random.Range(0, clips.Length);
         random2 = Random.Range(0, normalClips.Length);
+        p = Optons.spravnejOndra;
     }
 
     private AudioClip GetRandomClip()
@@ -45,6 +47,11 @@ public class MusicPlayer : MonoBehaviour
         {
             audioSource.clip = GetRandomClip();
             audioSource.Play();
+        }
+        if (Optons.spravnejOndra != p)
+        {
+            audioSource.Stop();
+            p = Optons.spravnejOndra;
         }
     }
 }
