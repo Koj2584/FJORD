@@ -340,6 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 531736713}
+  LoaderUI: {fileID: 0}
+  progressSlider: {fileID: 0}
 --- !u!114 &59852993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4626,15 +4628,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7216981, g: 1, b: 0.9946049, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: aab309c6ab5c774458f119236fba1721, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6711,6 +6713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 886589825}
+  LoaderUI: {fileID: 0}
+  progressSlider: {fileID: 0}
 --- !u!1 &1678609955
 GameObject:
   m_ObjectHideFlags: 0
@@ -7125,6 +7129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 886589825}
+  LoaderUI: {fileID: 0}
+  progressSlider: {fileID: 0}
 --- !u!1 &1909668218
 GameObject:
   m_ObjectHideFlags: 0
@@ -7923,6 +7929,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 886589825}
+  LoaderUI: {fileID: 0}
+  progressSlider: {fileID: 0}
 --- !u!1001 &4468552999896012627
 PrefabInstance:
   m_ObjectHideFlags: 0

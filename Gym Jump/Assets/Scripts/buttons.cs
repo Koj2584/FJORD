@@ -8,6 +8,9 @@ public class buttons : MonoBehaviour
 {
     public AudioSource sound;
 
+    public GameObject LoaderUI;
+    public Slider progressSlider;
+
     public void PlaySound()
     {
         sound.Play();
@@ -29,7 +32,8 @@ public class buttons : MonoBehaviour
 
     public void Ranked()
     {
-        SceneManager.LoadScene(2);
+        LoaderUI.SetActive(true);
+        LoadScene(2);
     }
 
     public void HlMenu()
@@ -66,9 +70,6 @@ public class buttons : MonoBehaviour
         Application.Quit();
     }
 
-    public GameObject LoaderUI;
-    public Slider progressSlider;
-
     public void LoadScene(int index)
     {
         StartCoroutine(LoadScene_Coroutine(index));
@@ -77,10 +78,9 @@ public class buttons : MonoBehaviour
     public IEnumerator LoadScene_Coroutine(int index)
     {
         progressSlider.value = 0;
-        
-        Debug.Log("zmrde");
+        LoaderUI.SetActive(true);
 
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(1);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(index);
         asyncOperation.allowSceneActivation = false;
         float progress = 0;
 
