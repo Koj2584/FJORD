@@ -19,6 +19,7 @@ public class Death : MonoBehaviour
             // Co se stane po smrti
             Debug.Log("Die");
             player.SetActive(false);
+            Optons.smrt = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

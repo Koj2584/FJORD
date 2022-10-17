@@ -15,6 +15,12 @@ public class Hlasky : MonoBehaviour
 
     void Start()
     {
+        if(Optons.smrt)
+        {
+            audioSource.clip = clips[0];
+            audioSource.Play();
+            Optons.smrt = true;
+        }
         audioSource.loop = false;
         audioSource.volume = 1f;
         audioSource.outputAudioMixerGroup = Output;
@@ -23,7 +29,7 @@ public class Hlasky : MonoBehaviour
 
     private AudioClip GetRandomClip()
     {
-        return clips[Random.Range(0, clips.Length)];
+        return clips[Random.Range(1, clips.Length)];
     }
     void Update()
     {
