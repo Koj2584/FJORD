@@ -18,7 +18,8 @@ public class buttons : MonoBehaviour
         try
         {
             SceneMan.scene = int.Parse(gameObject.name);
-            SceneManager.LoadScene(1);
+            LoaderUI.SetActive(true);
+            LoadScene(1);
         }
         catch
         {
@@ -50,7 +51,8 @@ public class buttons : MonoBehaviour
             SceneMan.scene++;
             Debug.Log(SceneMan.scene);
             Time.timeScale = 1;
-            SceneManager.LoadScene(1);
+            LoaderUI.SetActive(true);
+            LoadScene(1);
         }
         catch
         {
@@ -62,5 +64,36 @@ public class buttons : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    public GameObject LoaderUI;
+    public Slider progressSlider;
+
+    public void LoadScene(int index)
+    {
+        StartCoroutine(LoadScene_Coroutine(index));
+    }
+
+    public IEnumerator LoadScene_Coroutine(int index)
+    {
+        progressSlider.value = 0;
+        
+        Debug.Log("zmrde");
+
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(1);
+        asyncOperation.allowSceneActivation = false;
+        float progress = 0;
+
+        while (!asyncOperation.isDone)
+        {
+            progress = Mathf.MoveTowards(progress, asyncOperation.progress, Time.deltaTime);
+            progressSlider.value = progress;
+            if (progress >= 0.9f)
+            {
+                progressSlider.value = 1;
+                asyncOperation.allowSceneActivation = true;
+            }
+            yield return null;
+        }
     }
 }
