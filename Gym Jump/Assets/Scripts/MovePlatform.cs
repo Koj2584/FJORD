@@ -45,7 +45,14 @@ public class MovePlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        player.parent = this.transform;
+        if (collision.relativeVelocity.y <= 0f)
+        {
+            Rigidbody2D rg = collision.collider.GetComponent<Rigidbody2D>();
+            if (rg != null)
+            {
+                player.parent = this.transform;
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)

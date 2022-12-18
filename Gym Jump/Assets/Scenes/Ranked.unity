@@ -2289,6 +2289,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &641881271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641881273}
+  - component: {fileID: 641881272}
+  m_Layer: 0
+  m_Name: snow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &641881272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641881271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4623d9d90e220bf469deb27bee421059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136457750}
+  snow: {fileID: 2887929055758315358, guid: 44c9c1f8165e37247b77dcd4071991cb, type: 3}
+--- !u!4 &641881273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641881271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.037264, y: 82.47386, z: -0.19457333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665359449
 GameObject:
   m_ObjectHideFlags: 0
@@ -4294,9 +4340,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5a7cb8c0dcd2dd642927a903727ae6be, type: 3}
   - {fileID: 8300000, guid: 5a7cb8c0dcd2dd642927a903727ae6be, type: 3}
   normalClips:
-  - {fileID: 8300000, guid: fde9e98a2e6c15140a29d31d42350cb7, type: 3}
-  - {fileID: 8300000, guid: d8a70f52cbbe5e148805a4df4f0b50ce, type: 3}
-  - {fileID: 8300000, guid: 772ec83b71518d244953828a5da5405b, type: 3}
+  - {fileID: 8300000, guid: 2bf3e26d18c55b74a9089ad6ab7abc38, type: 3}
+  - {fileID: 8300000, guid: 9ea1b2ee49ef4d249a1ff604fad13619, type: 3}
+  - {fileID: 8300000, guid: 44a6acc5fdfb6b44f99219c9f6fefc95, type: 3}
+  - {fileID: 8300000, guid: 22c7e46947d953541bf33b45457675b6, type: 3}
+  - {fileID: 8300000, guid: d0f42361e8645ef4094604992c6f3139, type: 3}
   audioSource: {fileID: 1155496659}
   Output: {fileID: 24300002, guid: 3d8cadc7989631f4c89f1d5748828ce7, type: 2}
 --- !u!4 &1155496658
